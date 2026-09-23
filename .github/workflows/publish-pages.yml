@@ -32,7 +32,7 @@ jobs:
         run: Rscript -e 'install.packages("rmarkdown", repos = "https://cloud.r-project.org")'
 
       - name: Render website
-        run: quarto render
+        run: quarto render --no-execute
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
