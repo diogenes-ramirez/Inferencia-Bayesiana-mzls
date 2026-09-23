@@ -31,6 +31,12 @@ jobs:
       - name: Install R Markdown dependencies
         run: Rscript -e 'install.packages("rmarkdown", repos = "https://cloud.r-project.org")'
 
+      - name: Configure Quarto R
+        run: echo "QUARTO_R=$(dirname $(which Rscript))" >> "$GITHUB_ENV"
+
+      - name: Verify R Markdown dependencies
+        run: Rscript -e 'library(rmarkdown); cat("rmarkdown is available\n")'
+
       - name: Render website
         run: quarto render --no-execute
 
