@@ -1,0 +1,36 @@
+---
+title: "Unidad 13: Evaluacion de modelos"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(113)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes para construir el ejemplo.
+```
+
+## Ejercicio 1: Criterio predictivo
+
+Explique por que la evaluacion predictiva no debe confundirse con ajuste en la muestra. Describa el papel de log-verosimilitud punto a punto.
+
+## Ejercicio 2: Resultados
+
+Guarde una matriz o data frame de log-verosimilitud en `log_lik` y un escalar finito en `elpd_estimado`.
+
+```{r}
+# TODO: cree log_lik y elpd_estimado.
+```
+
+## Ejercicio 3: Chequeo predictivo
+
+Genere al menos 10 `predicciones_posteriores`. Discuta una discrepancia que un chequeo predictivo posterior podria revelar.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

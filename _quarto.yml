@@ -1,0 +1,42 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "unidades/*.qmd"
+  resources:
+    - "ejercicios/*.Rmd"
+
+website:
+  title: "Estadistica Bayesiana Computacional"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: temario.qmd
+        text: Temario
+      - href: cronograma.qmd
+        text: Cronograma
+      - href: instalacion.qmd
+        text: Instalacion
+      - href: materiales.qmd
+        text: Materiales
+      - href: proyecto.qmd
+        text: Proyecto
+      - href: entregas.qmd
+        text: Entregas
+      - href: practicas/monte-carlo.qmd
+        text: Practica 1
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto

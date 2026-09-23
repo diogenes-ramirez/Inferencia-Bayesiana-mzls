@@ -1,0 +1,55 @@
+---
+title: "Unidad 2. Aproximaciones Numericas"
+---
+
+## Proposito
+
+Esta unidad muestra como aproximar distribuciones posteriores antes de usar MCMC. La idea central es convertir integrales y normalizaciones dificiles en calculos numericos controlables.
+
+## Conceptos clave
+
+### Evaluacion de posteriores en grillas
+
+Una grilla reemplaza el espacio continuo de parametros por un conjunto finito de valores. Se evalua $p(y\mid\theta)p(\theta)$ en cada punto y luego se normaliza la suma para obtener una aproximacion discreta de la posterior.
+
+El metodo es transparente y util para uno o dos parametros. Permite ver la forma de la posterior, comparar priors y entender el papel de la constante de normalizacion.
+
+### Integracion numerica
+
+Muchas cantidades bayesianas son integrales posteriores: $E[g(\theta)\mid y]=\int g(\theta)p(\theta\mid y)d\theta$. La integracion numerica aproxima estas integrales con reglas de suma ponderada.
+
+En baja dimension, metodos como cuadratura o sumas sobre grillas pueden ser precisos. En alta dimension, el numero de puntos necesarios crece rapidamente y la aproximacion se vuelve costosa.
+
+### Muestreo por rechazo
+
+El muestreo por rechazo genera candidatos desde una distribucion facil $q(\theta)$ y los acepta con probabilidad proporcional a la razon entre la densidad objetivo y una cota $Mq(\theta)$.
+
+Funciona bien si $q$ cubre las zonas importantes de la posterior y $M$ no es demasiado grande. Si la envolvente es mala, se rechazan demasiados candidatos y el metodo se vuelve ineficiente.
+
+### Muestreo por importancia
+
+El muestreo por importancia estima integrales usando muestras de una distribucion propuesta $q(\theta)$ y pesos $w(\theta)=p(y\mid\theta)p(\theta)/q(\theta)$. La estimacion se concentra en corregir la diferencia entre la propuesta y la distribucion objetivo.
+
+El problema aparece cuando pocos pesos dominan la suma. Esto indica que $q$ no cubre bien regiones relevantes de la posterior y produce estimaciones inestables.
+
+### Limitaciones en espacios de alta dimension
+
+La dificultad principal es la dimensionalidad. Una grilla con 100 puntos por parametro necesita $100^d$ evaluaciones para $d$ parametros. Esta explosion hace inviables los metodos directos.
+
+Ademas, en dimensiones altas la masa posterior puede concentrarse en regiones estrechas que son dificiles de encontrar con propuestas simples.
+
+## Conexion computacional
+
+En R, estas aproximaciones se implementan con vectores, matrices y simulacion directa. Aunque no son la solucion final para modelos complejos, sirven para validar intuiciones, construir ejemplos reproducibles y diagnosticar por que se necesitan MCMC y algoritmos mas sofisticados.
+
+## Lecturas sugeridas
+
+- Hoff: secciones sobre calculo posterior en modelos simples y aproximaciones numericas.
+- Carlin y Louis: topicos sobre integracion bayesiana, metodos de aproximacion y limitaciones practicas.
+- Bolstad: capitulos sobre grillas, integracion numerica, rechazo e importancia.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-02-aproximaciones-numericas.Rmd)

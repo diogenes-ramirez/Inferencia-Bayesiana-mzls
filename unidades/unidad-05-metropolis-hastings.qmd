@@ -1,0 +1,58 @@
+---
+title: "Unidad 5. Metropolis-Hastings"
+---
+
+## Proposito
+
+Esta unidad estudia el algoritmo que hizo practicable la simulacion posterior en muchos modelos no conjugados. Metropolis-Hastings muestra como usar razones de densidades sin calcular la constante normalizadora.
+
+## Conceptos clave
+
+### Algoritmo Metropolis
+
+El algoritmo Metropolis propone un nuevo valor $\theta'$ cerca del estado actual $\theta$ y lo acepta con probabilidad
+$$\alpha=\min\left(1,\frac{p(y\mid\theta')p(\theta')}{p(y\mid\theta)p(\theta)}\right)$$
+cuando la propuesta es simetrica.
+
+Si el candidato tiene mayor densidad posterior, se acepta siempre. Si tiene menor densidad, puede aceptarse de todos modos para permitir exploracion.
+
+### Propuestas simetricas y asimetricas
+
+Una propuesta simetrica cumple $q(\theta'\mid\theta)=q(\theta\mid\theta')$. Si la propuesta es asimetrica, la probabilidad de aceptacion debe corregirse con la razon de propuestas:
+$$\alpha=\min\left(1,\frac{p(y\mid\theta')p(\theta')q(\theta\mid\theta')}{p(y\mid\theta)p(\theta)q(\theta'\mid\theta)}\right).$$
+
+Esta correccion mantiene la posterior como distribucion estacionaria de la cadena.
+
+### Tasa de aceptacion
+
+La tasa de aceptacion resume que proporcion de candidatos entra a la cadena. Una tasa muy alta puede indicar pasos demasiado pequenos; una tasa muy baja puede indicar propuestas demasiado agresivas.
+
+No existe un numero magico universal. La tasa debe interpretarse junto con autocorrelacion, trazas y exploracion de la posterior.
+
+### Ajuste de escala
+
+La escala de la propuesta controla el tamano de los saltos. Escalas pequenas producen movimientos seguros pero lentos. Escalas grandes proponen regiones lejanas que a menudo son rechazadas.
+
+El ajuste busca equilibrio entre movimiento y aceptacion. En dimensiones altas, una mala escala puede hacer que la cadena se vuelva inutil aunque el algoritmo sea teoricamente correcto.
+
+### Implementacion desde cero en R
+
+Implementar Metropolis-Hastings desde cero obliga a separar log-prior, log-verosimilitud, propuesta y regla de aceptacion. Usar log-densidades evita subdesbordamiento numerico.
+
+Esta implementacion es didactica: no compite con Stan, pero ensena que un muestreador es una receta probabilistica verificable.
+
+## Conexion computacional
+
+En R se simulan propuestas, se calculan log posteriores no normalizadas y se decide aceptacion con numeros uniformes. En Stan no se usa Metropolis aleatorio simple para modelos continuos generales, pero comprenderlo ayuda a interpretar por que HMC mejora la exploracion.
+
+## Lecturas sugeridas
+
+- Hoff: secciones sobre algoritmos Metropolis y ejemplos bayesianos no conjugados.
+- Carlin y Louis: capitulos sobre Metropolis-Hastings, seleccion de propuestas y diagnosticos.
+- Bolstad: capitulos sobre construccion computacional de Metropolis-Hastings.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-05-metropolis-hastings.Rmd)

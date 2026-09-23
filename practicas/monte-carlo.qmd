@@ -1,0 +1,92 @@
+---
+title: "Practica 1: Simulacion Monte Carlo"
+---
+
+## Objetivo
+
+Usar simulacion Monte Carlo para aproximar cantidades posteriores en un modelo beta-binomial.
+
+## Modelo
+
+Supongamos que observamos `y` exitos en `n` ensayos:
+
+\[
+y \mid \theta \sim \text{Binomial}(n, \theta)
+\]
+
+Usamos una distribucion previa:
+
+\[
+\theta \sim \text{Beta}(a, b)
+\]
+
+La posterior es:
+
+\[
+\theta \mid y \sim \text{Beta}(a + y, b + n - y)
+\]
+
+En esta practica usamos el caso conjugado para verificar nuestras simulaciones antes de estudiar modelos sin solucion analitica.
+
+## Codigo en R
+
+```{r}
+set.seed(123)
+
+n <- 40
+y <- 27
+a <- 2
+b <- 2
+
+post_a <- a + y
+post_b <- b + n - y
+
+muestras <- rbeta(10000, shape1 = post_a, shape2 = post_b)
+
+media_posterior <- mean(muestras)
+intervalo_credibilidad <- quantile(muestras, probs = c(0.025, 0.975))
+
+media_posterior
+intervalo_credibilidad
+```
+
+## Visualizacion
+
+```{r}
+hist(
+  muestras,
+  breaks = 40,
+  probability = TRUE,
+  col = "#d8e7f3",
+  border = "white",
+  main = "Distribucion posterior de theta",
+  xlab = expression(theta)
+)
+
+curve(
+  dbeta(x, post_a, post_b),
+  from = 0,
+  to = 1,
+  add = TRUE,
+  col = "#d95f02",
+  lwd = 2
+)
+```
+
+## Preguntas
+
+- Cual es la media posterior de `theta`?
+- Cual es el intervalo creible del 95%?
+- Cual es la probabilidad posterior de que `theta > 0.6`?
+- Que cambia si usamos una previa `Beta(1, 1)`?
+- Que cambia si usamos una previa mas informativa, por ejemplo `Beta(20, 20)`?
+
+## Extension
+
+Calcula:
+
+```{r}
+mean(muestras > 0.6)
+```
+
+Interpreta este resultado como una probabilidad posterior.

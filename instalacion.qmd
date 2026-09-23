@@ -1,0 +1,62 @@
+---
+title: "Instalacion"
+---
+
+## R y RStudio
+
+1. Instala R desde <https://cran.r-project.org/>.
+2. Instala RStudio desde <https://posit.co/download/rstudio-desktop/>.
+3. Abre RStudio y verifica:
+
+```{r}
+R.version.string
+```
+
+## Quarto
+
+Descarga e instala Quarto desde <https://quarto.org/docs/get-started/>.
+
+Verifica en una terminal:
+
+```bash
+quarto --version
+```
+
+## Paquetes de R
+
+Ejecuta en R:
+
+```{r, eval=FALSE}
+install.packages(c(
+  "cmdstanr",
+  "posterior",
+  "bayesplot",
+  "loo",
+  "ggplot2",
+  "dplyr",
+  "tidyr",
+  "coda"
+), repos = c("https://mc-stan.org/r-packages/", "https://cloud.r-project.org"))
+```
+
+## CmdStan
+
+Despues de instalar `cmdstanr`, ejecuta:
+
+```{r, eval=FALSE}
+library(cmdstanr)
+install_cmdstan()
+cmdstan_version()
+```
+
+## Prueba Minima
+
+```{r, eval=FALSE}
+library(cmdstanr)
+library(posterior)
+library(bayesplot)
+
+cmdstan_version()
+```
+
+Si esta prueba funciona, el entorno esta listo para trabajar con Stan desde R.

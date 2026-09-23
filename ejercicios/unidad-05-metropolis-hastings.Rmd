@@ -1,0 +1,36 @@
+---
+title: "Unidad 05: Metropolis-Hastings"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(105)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes.
+```
+
+## Ejercicio 1: Objetivo y propuesta
+
+Defina una densidad objetivo unidimensional y una propuesta de caminata aleatoria. Explique la razon de aceptacion de Metropolis-Hastings.
+
+## Ejercicio 2: Implementacion
+
+Ejecute al menos 500 iteraciones y guarde la cadena en `cadena_mh`, la escala positiva de propuesta en `propuesta_sd` y la proporcion aceptada en `tasa_aceptacion`.
+
+```{r}
+# TODO: implemente el algoritmo y cree los objetos requeridos.
+```
+
+## Ejercicio 3: Diagnostico
+
+Interprete una traza y discuta como una propuesta demasiado pequena o grande afecta mezcla y aceptacion.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

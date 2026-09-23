@@ -1,0 +1,49 @@
+---
+title: "Unidad 10. NUTS"
+---
+
+## Proposito
+
+Esta unidad presenta NUTS como una extension practica de HMC que ajusta automaticamente la longitud de trayectoria. Es clave para usar Stan con menos decisiones manuales y mas diagnostico.
+
+## Conceptos clave
+
+### No-U-Turn Sampler
+
+NUTS evita elegir manualmente la longitud de trayectoria. Construye una trayectoria hacia adelante y atras hasta detectar que seguir avanzando empezaria a regresar hacia el punto inicial.
+
+La condicion de no retorno reduce trayectorias inutiles y mejora la exploracion sin exigir al usuario elegir un numero fijo de pasos leapfrog.
+
+### Adaptacion automatica
+
+Durante warmup, Stan adapta el tamano de paso y una matriz de masa que escala el espacio de parametros. Esta adaptacion busca una exploracion eficiente antes de guardar muestras para inferencia.
+
+Las muestras de warmup no se usan como posterior final porque el algoritmo todavia esta ajustando su mecanismo de transicion.
+
+### `adapt_delta` y `max_treedepth`
+
+`adapt_delta` controla el objetivo de aceptacion durante adaptacion. Aumentarlo suele reducir el tamano de paso y puede disminuir divergencias, a costa de mayor tiempo de computo.
+
+`max_treedepth` limita la profundidad del arbol de trayectorias. Alcanzar este limite puede indicar que NUTS necesita trayectorias largas para explorar o que el modelo esta mal escalado.
+
+### Divergencias en Stan
+
+Una divergencia indica que la integracion Hamiltoniana encontro una region donde la geometria posterior es dificil de seguir con precision. No es una advertencia cosmetica: puede senalar sesgo en la muestra.
+
+La solucion preferida suele ser mejorar el modelo o la parametrizacion, no solo aumentar `adapt_delta`. En modelos jerarquicos, una parametrizacion no centrada puede eliminar geometria tipo embudo.
+
+## Conexion computacional
+
+En `cmdstanr`, NUTS se controla con argumentos como `adapt_delta`, `max_treedepth`, numero de cadenas y warmup. La practica consiste en ajustar el modelo, correr Stan, revisar diagnosticos y modificar la especificacion cuando la geometria lo exige.
+
+## Lecturas sugeridas
+
+- Hoff: conceptos de inferencia posterior multivariada y modelos que motivan NUTS.
+- Carlin y Louis: MCMC avanzado y diagnostico en modelos bayesianos aplicados.
+- Bolstad: base computacional para comprender adaptacion y simulacion MCMC.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-10-nuts.Rmd)

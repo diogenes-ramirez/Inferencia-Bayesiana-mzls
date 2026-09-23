@@ -1,0 +1,49 @@
+---
+title: "Unidad 6. Muestreador de Gibbs"
+---
+
+## Proposito
+
+Esta unidad presenta Gibbs como un metodo MCMC que aprovecha condicionales completas. Es especialmente util para comprender modelos jerarquicos y la estructura local de una posterior multivariada.
+
+## Conceptos clave
+
+### Condicionales completas
+
+La condicional completa de un parametro es su distribucion dado todos los demas parametros y los datos: $p(\theta_j\mid\theta_{-j},y)$. Gibbs actualiza un bloque por vez simulando de estas condicionales.
+
+Cuando las condicionales completas tienen formas conocidas, cada actualizacion es exacta. La cadena resultante tiene como estacionaria la posterior conjunta.
+
+### Gibbs sistematico y aleatorio
+
+En Gibbs sistematico se actualizan los parametros en un orden fijo. En Gibbs aleatorio se elige al azar que bloque actualizar. Ambos pueden ser validos bajo condiciones adecuadas.
+
+El orden puede afectar eficiencia, aunque no deberia cambiar la distribucion objetivo si el algoritmo esta bien construido.
+
+### Gibbs dentro de Metropolis
+
+No siempre se puede simular directamente de todas las condicionales. En ese caso, algunos bloques se actualizan con Metropolis-Hastings dentro de un esquema Gibbs.
+
+Este enfoque mixto permite combinar actualizaciones exactas donde existen con propuestas aproximadas donde la condicional es dificil.
+
+### Aplicaciones en modelos jerarquicos
+
+Los modelos jerarquicos suelen tener capas de parametros individuales, parametros poblacionales y escalas. Gibbs puede actualizar cada capa condicionando en las demas.
+
+En modelos normales conjugados, las condicionales completas suelen ser normales, gamma o inversa-gamma, lo que hace que Gibbs sea una herramienta pedagogica muy clara.
+
+## Conexion computacional
+
+En R, Gibbs se implementa como un bucle que alterna simulaciones condicionales y guarda la trayectoria. En Stan, el usuario no escribe Gibbs directamente, pero la idea de bloques y dependencia posterior ayuda a entender parametrizaciones centradas, no centradas y correlacion entre parametros.
+
+## Lecturas sugeridas
+
+- Hoff: capitulos sobre modelos normales, modelos jerarquicos y muestreo de Gibbs.
+- Carlin y Louis: capitulos sobre MCMC, modelos jerarquicos y algoritmos hibridos.
+- Bolstad: secciones sobre Gibbs sampling y ejemplos computacionales.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-06-gibbs.Rmd)

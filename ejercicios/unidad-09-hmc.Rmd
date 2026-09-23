@@ -1,0 +1,36 @@
+---
+title: "Unidad 09: HMC"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(109)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; puede implementar un ejemplo simplificado con datos simulados.
+```
+
+## Ejercicio 1: Geometria
+
+Explique el papel de posicion, momento y gradiente en Hamiltonian Monte Carlo. Describa por que HMC puede explorar mejor que una caminata aleatoria.
+
+## Ejercicio 2: Simulacion
+
+Implemente o analice draws de un ejemplo HMC bidimensional. Guarde al menos 100 draws en dos columnas en `muestras_hmc` y las energias en `energia_hmc`.
+
+```{r}
+# TODO: cree muestras_hmc y energia_hmc.
+```
+
+## Ejercicio 3: Aceptacion
+
+Calcule `tasa_aceptacion_hmc` y discuta el compromiso entre longitud de trayectoria, error de integracion y aceptacion.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

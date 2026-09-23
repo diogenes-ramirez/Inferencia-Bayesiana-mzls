@@ -1,0 +1,109 @@
+---
+title: "Temario"
+---
+
+Cada unidad enlazada expande la teoria, la conexion computacional y las lecturas sugeridas.
+
+## [Unidad 1. Fundamentos Computacionales](unidades/unidad-01-fundamentos-computacionales.qmd)
+
+- Regla de Bayes y distribucion posterior.
+- Priors, verosimilitud y posterior.
+- Casos conjugados como referencia.
+- Posteriores sin solucion analitica.
+- Simulacion y visualizacion en R.
+
+## [Unidad 2. Aproximaciones Numericas](unidades/unidad-02-aproximaciones-numericas.qmd)
+
+- Evaluacion de posteriores en grillas.
+- Integracion numerica.
+- Muestreo por rechazo.
+- Muestreo por importancia.
+- Limitaciones en espacios de alta dimension.
+
+## [Unidad 3. Monte Carlo](unidades/unidad-03-monte-carlo.qmd)
+
+- Ley de los grandes numeros.
+- Estimacion de medias, cuantiles y probabilidades posteriores.
+- Error Monte Carlo.
+- Simulacion predictiva previa y posterior.
+
+## [Unidad 4. Introduccion a MCMC](unidades/unidad-04-introduccion-mcmc.qmd)
+
+- Cadenas de Markov.
+- Distribucion estacionaria.
+- Burn-in, autocorrelacion y mezcla.
+- Diagnosticos basicos.
+
+## [Unidad 5. Metropolis-Hastings](unidades/unidad-05-metropolis-hastings.qmd)
+
+- Algoritmo Metropolis.
+- Propuestas simetricas y asimetricas.
+- Tasa de aceptacion.
+- Ajuste de escala.
+- Implementacion desde cero en R.
+
+## [Unidad 6. Muestreador de Gibbs](unidades/unidad-06-gibbs.qmd)
+
+- Condicionales completas.
+- Gibbs sistematico y aleatorio.
+- Gibbs dentro de Metropolis.
+- Aplicaciones en modelos jerarquicos.
+
+## [Unidad 7. Diagnostico de MCMC](unidades/unidad-07-diagnostico-mcmc.qmd)
+
+- Graficos de traza.
+- `Rhat`.
+- Effective sample size, ESS.
+- Autocorrelacion.
+- Cadenas atascadas y mala parametrizacion.
+
+## [Unidad 8. Stan](unidades/unidad-08-stan.qmd)
+
+- Estructura de un modelo Stan.
+- Bloques `data`, `parameters`, `model` y `generated quantities`.
+- Priors y verosimilitud.
+- Ejecucion desde R con `cmdstanr`.
+- Extraccion, resumen y visualizacion de distribuciones posteriores en R.
+
+## [Unidad 9. Hamiltonian Monte Carlo](unidades/unidad-09-hmc.qmd)
+
+- Motivacion geometrica.
+- Energia potencial y cinetica.
+- Integrador leapfrog.
+- Tamano de paso y longitud de trayectoria.
+
+## [Unidad 10. NUTS](unidades/unidad-10-nuts.qmd)
+
+- No-U-Turn Sampler.
+- Adaptacion automatica.
+- `adapt_delta` y `max_treedepth`.
+- Divergencias en Stan.
+
+## [Unidad 11. Regresion y GLM Bayesianos](unidades/unidad-11-regresion-glm-bayesianos.qmd)
+
+- Regresion lineal bayesiana.
+- Modelos lineales generalizados bayesianos.
+- Construccion de verosimilitudes con predictores.
+- Interpretacion de coeficientes, predicciones e incertidumbre.
+
+## [Unidad 12. Modelos Jerarquicos](unidades/unidad-12-modelos-jerarquicos.qmd)
+
+- Pooling completo, sin pooling y pooling parcial.
+- Parametrizacion centrada y no centrada.
+- Priors para escalas y correlaciones.
+
+## [Unidad 13. Evaluacion de Modelos](unidades/unidad-13-evaluacion-modelos.qmd)
+
+- Chequeos predictivos previos.
+- Chequeos predictivos posteriores.
+- LOO-CV y WAIC.
+- Sensibilidad a priors.
+
+## [Unidad 14. Temas Avanzados Panoramicos](unidades/unidad-14-temas-avanzados-panoramicos.qmd)
+
+Esta unidad presenta una seleccion de temas avanzados como panorama final. La cobertura puede ajustarse segun el tiempo disponible y los intereses del grupo.
+
+- Inferencia variacional.
+- Approximate Bayesian Computation.
+- Muestreo secuencial Monte Carlo.
+- Modelos de mezcla y label switching.

@@ -1,0 +1,40 @@
+---
+title: "Unidad 08: Stan"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(108)
+estudiante_id <- "REEMPLAZAR"
+# cmdstanr es opcional. Si CmdStan no esta disponible, analice draws simulados con R base.
+```
+
+## Ejercicio 1: Modelo declarativo
+
+Describa los bloques `data`, `parameters`, `model` y `generated quantities` para un modelo normal simple. Explique la diferencia entre declarar densidades y simular datos.
+
+## Ejercicio 2: Draws posteriores
+
+Use `cmdstanr` si esta disponible, o genere draws simulados documentados. Guarde el ajuste o su representacion en `ajuste_stan` y al menos 100 draws en `muestras_stan`.
+
+```{r}
+# TODO: cree ajuste_stan y muestras_stan sin exigir CmdStan para esta entrega.
+```
+
+## Ejercicio 3: Resumen y diagnostico
+
+Guarde una tabla en `resumen_posterior` y `rhat_valor`. Interprete la incertidumbre y explique por que un resumen posterior requiere diagnosticos.
+
+```{r}
+# TODO: cree resumen_posterior y rhat_valor.
+```
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

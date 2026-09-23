@@ -1,0 +1,51 @@
+---
+title: "Unidad 3. Monte Carlo"
+---
+
+## Proposito
+
+Esta unidad introduce Monte Carlo como el puente entre probabilidad e inferencia computacional. Si se puede simular de una distribucion, se pueden aproximar sus expectativas, cuantiles y probabilidades.
+
+## Conceptos clave
+
+### Ley de los grandes numeros
+
+La ley de los grandes numeros justifica promediar simulaciones. Si $\theta^{(1)},\ldots,\theta^{(S)}$ son muestras independientes de $p(\theta\mid y)$, entonces
+$$\frac{1}{S}\sum_{s=1}^S g(\theta^{(s)}) \to E[g(\theta)\mid y]$$
+cuando $S$ crece.
+
+La inferencia se vuelve una tarea de simulacion: representar la posterior con muchos valores plausibles y resumir esos valores segun la pregunta estadistica.
+
+### Estimacion de medias, cuantiles y probabilidades posteriores
+
+La media posterior se estima con el promedio de las muestras. Los cuantiles posteriores se obtienen ordenando las simulaciones. Una probabilidad como $P(\theta>0\mid y)$ se aproxima con la proporcion de muestras que cumplen la condicion.
+
+Esta logica es poderosa porque la misma muestra posterior permite responder muchas preguntas sin recalcular el modelo.
+
+### Error Monte Carlo
+
+Toda estimacion basada en simulacion tiene error Monte Carlo. Para muestras independientes, el error estandar del promedio se aproxima por $sd(g(\theta^{(s)}))/\sqrt{S}$.
+
+Este error no es incertidumbre del modelo, sino incertidumbre numerica por usar un numero finito de simulaciones. Aumentar $S$ lo reduce, pero con rendimientos decrecientes.
+
+### Simulacion predictiva previa y posterior
+
+La simulacion predictiva previa genera parametros desde el prior y datos desde el modelo antes de observar datos reales. Sirve para detectar priors y verosimilitudes que producen resultados absurdos.
+
+La simulacion predictiva posterior genera nuevos datos condicionados en la posterior. Permite evaluar que patrones espera el modelo despues de aprender de los datos.
+
+## Conexion computacional
+
+En R, Monte Carlo se expresa con funciones como `rbinom`, `rnorm`, `rgamma` y operaciones vectorizadas. En Stan, la misma idea aparece en `generated quantities`, donde se simulan predicciones, residuos o cantidades derivadas a partir de muestras posteriores.
+
+## Lecturas sugeridas
+
+- Hoff: capitulos sobre resumen posterior, simulacion posterior y prediccion.
+- Carlin y Louis: secciones sobre inferencia posterior, prediccion y uso de simulacion.
+- Bolstad: capitulos sobre metodos Monte Carlo y error de simulacion.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-03-monte-carlo.Rmd)

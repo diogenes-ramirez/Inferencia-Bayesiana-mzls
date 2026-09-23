@@ -1,0 +1,55 @@
+---
+title: "Entregas y calificacion"
+---
+
+## Estado actual
+
+La fase 1 es estatica. NO hay formulario del navegador para subir entregas ni calificacion automatica en el navegador. La carga y calificacion autenticadas con Supabase son una etapa futura y no estan implementadas.
+
+## Estudiantes
+
+Cada unidad ofrece la descarga de su Rmd en la pagina correspondiente. Conserve el nombre canonico del archivo y entregue el Rmd por el canal que indique el docente mientras la fase 1 este activa.
+
+Antes de entregar, ejecute el documento en una sesion limpia de R: reinicie R, cargue solo los paquetes necesarios y ejecute todos los bloques en orden. Asi se evita depender de objetos creados en una sesion anterior.
+
+## Docente
+
+Organice las entregas con la estructura exacta `entregas/<estudiante_id>/unidad-XX-...Rmd`: un directorio inmediato por estudiante y un Rmd por unidad.
+
+```text
+entregas/
+  estudiante-001/
+    unidad-01-fundamentos-computacionales.Rmd
+    unidad-02-...Rmd
+  estudiante-002/
+    unidad-01-fundamentos-computacionales.Rmd
+```
+
+Desde la raiz del proyecto, ejecute en PowerShell:
+
+```powershell
+.\calificacion\calificar_lote_windows.ps1 -EntregasDir .\entregas
+```
+
+Para elegir otra carpeta de reportes:
+
+```powershell
+.\calificacion\calificar_lote_windows.ps1 -EntregasDir .\entregas -ReportesDir .\calificacion\reportes
+```
+
+## Rubrica
+
+| Componente | Puntos |
+|---|---:|
+| Calificacion automatica: estructura | 10 |
+| Calificacion automatica: objetos y validaciones requeridos | 60 |
+| Razonamiento, interpretacion y calidad del codigo | 30 |
+| **Total** | **100** |
+
+## Seguridad
+
+El calificador local ejecuta codigo R no confiable de estudiantes. Debe evaluarse solamente en una maquina virtual, contenedor o entorno Windows equivalente aislado. No lo ejecute en la maquina personal ni con datos sensibles.
+
+## Proxima etapa
+
+La siguiente etapa incorporara con Supabase cargas autenticadas, almacenamiento y calificacion; no forma parte de esta fase y no esta implementada.

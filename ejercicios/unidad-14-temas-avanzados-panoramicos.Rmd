@@ -1,0 +1,36 @@
+---
+title: "Unidad 14: Temas avanzados panoramicos"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(114)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes especializados.
+```
+
+## Ejercicio 1: Metodo alternativo
+
+Elija inferencia variacional, ABC, SMC o un modelo de mezcla. Explique que dificultad computacional motiva el metodo y una limitacion importante.
+
+## Ejercicio 2: Aproximacion
+
+Genere al menos 100 valores en `muestras_aproximadas` y guarde una estimacion finita en `estimacion_alternativa`.
+
+```{r}
+# TODO: cree muestras_aproximadas y estimacion_alternativa.
+```
+
+## Ejercicio 3: Comparacion
+
+Construya `comparacion_metodos` como data frame con al menos dos filas. Compare costo, incertidumbre y diagnosticos del metodo elegido frente a MCMC.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

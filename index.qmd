@@ -1,0 +1,39 @@
+---
+title: "Estadistica Bayesiana Computacional"
+subtitle: "Calculo posterior, simulacion, MCMC, Gibbs, HMC, NUTS, R y Stan"
+---
+
+## Presentacion
+
+Este sitio contiene los materiales base del curso **Estadistica Bayesiana Computacional**. El objetivo es aprender a estimar, diagnosticar e interpretar modelos bayesianos cuando la distribucion posterior no tiene solucion analitica.
+
+El curso avanza desde simulacion Monte Carlo y aproximaciones numericas hasta muestreadores MCMC modernos usados por Stan, incluyendo Hamiltonian Monte Carlo y No-U-Turn Sampler.
+
+## Objetivos
+
+Este curso esta dirigido a estudiantes con conocimientos previos de probabilidad, estadistica inferencial basica y manejo inicial de R.
+
+- Formular modelos bayesianos a partir de un proceso generativo.
+- Calcular e interpretar distribuciones posteriores con herramientas computacionales.
+- Implementar metodos Monte Carlo, Metropolis-Hastings y Gibbs en R.
+- Ajustar modelos bayesianos en Stan desde R.
+- Diagnosticar cadenas MCMC usando trazas, `Rhat`, ESS y divergencias.
+- Comunicar resultados con intervalos creibles, predicciones posteriores y visualizaciones.
+
+## Software
+
+- R
+- RStudio
+- Quarto
+- CmdStan
+- Paquetes de R: `cmdstanr`, `posterior`, `bayesplot`, `loo`, `ggplot2`, `dplyr`, `tidyr`
+
+## Evaluacion Sugerida
+
+- Practicas computacionales: 40%
+- Tareas cortas de interpretacion: 20%
+- Proyecto final aplicado: 40%
+
+## Primer Paso
+
+Antes de iniciar las practicas, revisa la pagina de [Instalacion](instalacion.qmd) y verifica que R, Quarto y Stan funcionen correctamente.

@@ -1,0 +1,49 @@
+---
+title: "Unidad 13. Evaluacion de Modelos"
+---
+
+## Proposito
+
+Esta unidad presenta la evaluacion bayesiana como una practica predictiva y critica. Ajustar un modelo no basta: hay que revisar que implica antes de ver datos, que reproduce despues y que tan sensibles son las conclusiones.
+
+## Conceptos clave
+
+### Chequeos predictivos previos
+
+Los chequeos predictivos previos simulan datos desde el prior predictivo: $p(y)=\int p(y\mid\theta)p(\theta)d\theta$. Sirven para evaluar si el modelo produce datos plausibles antes de observar la muestra real.
+
+Si las simulaciones previas generan valores absurdos, el problema esta en los supuestos, no en el algoritmo. Esta etapa obliga a convertir priors abstractos en consecuencias observables.
+
+### Chequeos predictivos posteriores
+
+Los chequeos predictivos posteriores simulan nuevos datos desde $p(y^{rep}\mid y)$. Luego se comparan patrones de los datos observados con patrones de datos replicados.
+
+Estos chequeos no prueban que el modelo sea verdadero. Ayudan a detectar discrepancias: colas mal representadas, dispersion insuficiente, dependencia no modelada o estructuras sistematicas omitidas.
+
+### LOO-CV y WAIC
+
+LOO-CV estima desempeno predictivo fuera de muestra dejando una observacion fuera de manera aproximada. WAIC usa una aproximacion basada en la densidad predictiva punto a punto y penalizacion por complejidad efectiva.
+
+Ambos se usan para comparar modelos predictivamente, no para declarar verdades absolutas. Diferencias pequenas deben interpretarse con error estandar y criterio sustantivo.
+
+### Sensibilidad a priors
+
+La sensibilidad a priors evalua si conclusiones importantes cambian bajo elecciones previas razonables. Es especialmente importante con datos escasos, modelos jerarquicos o parametros debilmente identificados.
+
+Un buen analisis no es el que oculta la influencia del prior, sino el que la muestra y la justifica.
+
+## Conexion computacional
+
+En Stan se generan simulaciones previas y posteriores con `generated quantities`. En R, `bayesplot` permite comparar datos observados y replicados, mientras `loo` calcula LOO-CV, WAIC y diagnosticos como valores Pareto-k problematicos.
+
+## Lecturas sugeridas
+
+- Hoff: secciones sobre prediccion posterior y evaluacion de modelos.
+- Carlin y Louis: capitulos sobre comparacion, seleccion y validacion de modelos bayesianos.
+- Bolstad: capitulos sobre simulacion predictiva y resumen computacional de modelos.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-13-evaluacion-modelos.Rmd)

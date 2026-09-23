@@ -1,0 +1,49 @@
+---
+title: "Unidad 4. Introduccion a MCMC"
+---
+
+## Proposito
+
+Esta unidad explica por que MCMC permite simular de distribuciones posteriores complejas sin conocer su constante de normalizacion. Es la base conceptual de Metropolis-Hastings, Gibbs, HMC y NUTS.
+
+## Conceptos clave
+
+### Cadenas de Markov
+
+Una cadena de Markov es una secuencia aleatoria donde el siguiente estado depende del estado actual y no de toda la historia previa. En MCMC, los estados son valores posibles de los parametros.
+
+El objetivo no es simular puntos independientes, sino construir una cadena cuya distribucion de largo plazo sea la posterior deseada.
+
+### Distribucion estacionaria
+
+Una distribucion estacionaria $\pi$ satisface que, si la cadena comienza con $\pi$, entonces permanece con $\pi$ despues de aplicar la transicion. Los algoritmos MCMC disenan transiciones que dejan invariante la posterior.
+
+La condicion de balance detallado, $\pi(a)K(a,b)=\pi(b)K(b,a)$, es una forma comun de garantizar estacionariedad.
+
+### Burn-in, autocorrelacion y mezcla
+
+El burn-in descarta iteraciones iniciales que pueden depender demasiado del punto de arranque. No arregla una cadena mal construida, pero puede reducir sesgo inicial en ejemplos simples.
+
+La autocorrelacion mide dependencia entre iteraciones. Alta autocorrelacion implica menos informacion efectiva por muestra. La mezcla describe que tan bien la cadena explora todas las regiones relevantes de la posterior.
+
+### Diagnosticos basicos
+
+Los diagnosticos buscan evidencia de que la cadena explora la distribucion objetivo. Trazas, autocorrelaciones, comparacion entre cadenas y resumen de cantidades posteriores son herramientas iniciales.
+
+Ningun diagnostico prueba convergencia de manera absoluta. Solo puede mostrar senales de problemas o aumentar la confianza cuando distintas evidencias coinciden.
+
+## Conexion computacional
+
+En R se pueden construir cadenas simples para observar dependencia, burn-in y mezcla. En Stan, MCMC se ejecuta automaticamente, pero interpretar salidas como `Rhat`, ESS y divergencias exige comprender esta base.
+
+## Lecturas sugeridas
+
+- Hoff: secciones sobre simulacion posterior y fundamentos de cadenas de Markov.
+- Carlin y Louis: capitulos sobre metodos MCMC y diagnostico de convergencia.
+- Bolstad: capitulos introductorios sobre cadenas de Markov Monte Carlo.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-04-introduccion-mcmc.Rmd)

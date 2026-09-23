@@ -1,0 +1,20 @@
+body {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.navbar-title {
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  color: #12304a;
+}
+
+code {
+  color: #0f4c81;
+}
+
+.callout {
+  border-radius: 10px;
+}

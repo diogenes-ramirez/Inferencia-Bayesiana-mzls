@@ -1,0 +1,36 @@
+---
+title: "Unidad 06: Gibbs"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(106)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes.
+```
+
+## Ejercicio 1: Condicionales completas
+
+Especifique un modelo bivariado con condicionales completas disponibles. Explique por que Gibbs evita calcular una razon de aceptacion.
+
+## Ejercicio 2: Muestreador
+
+Genere al menos 200 iteraciones de dos parametros y guarde la matriz en `cadena_gibbs`. Cada columna debe corresponder a un parametro.
+
+```{r}
+# TODO: implemente cadena_gibbs.
+```
+
+## Ejercicio 3: Resumen e interpretacion
+
+Guarde dos medias en `medias_gibbs` y una correlacion finita en `correlacion_gibbs`. Discuta dependencia entre componentes y mezcla.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

@@ -1,0 +1,55 @@
+---
+title: "Unidad 7. Diagnostico de MCMC"
+---
+
+## Proposito
+
+Esta unidad ensena a desconfiar de muestras posteriores sin diagnostico. Un algoritmo puede producir numeros, pero la inferencia solo es defendible si las cadenas exploraron adecuadamente la posterior.
+
+## Conceptos clave
+
+### Graficos de traza
+
+Un grafico de traza muestra el valor de un parametro a lo largo de las iteraciones. Una traza saludable no debe mostrar tendencias persistentes, saltos entre modos no explorados o cadenas separadas.
+
+La traza no prueba convergencia, pero revela problemas visibles: cadenas atascadas, exploracion lenta o dependencia fuerte del valor inicial.
+
+### `Rhat`
+
+`Rhat` compara variabilidad dentro de cadenas con variabilidad entre cadenas. Si varias cadenas inicializadas en puntos distintos exploran la misma distribucion, estas variabilidades deberian ser parecidas.
+
+Valores cercanos a 1 son deseables. Valores elevados sugieren que las cadenas no han mezclado bien o no estan explorando la misma region posterior.
+
+### Effective sample size, ESS
+
+El tamano efectivo de muestra estima cuanta informacion independiente contiene una muestra autocorrelacionada. Dos mil iteraciones altamente dependientes pueden equivaler a muchas menos muestras independientes.
+
+ESS bajo implica estimaciones posteriores menos precisas, especialmente para colas y cuantiles extremos.
+
+### Autocorrelacion
+
+La autocorrelacion mide dependencia entre iteraciones separadas por cierto rezago. Alta autocorrelacion indica que la cadena se mueve lentamente.
+
+Reducir autocorrelacion no siempre se logra guardando menos iteraciones. Es preferible mejorar parametrizacion, escala de propuesta o algoritmo.
+
+### Cadenas atascadas y mala parametrizacion
+
+Una mala parametrizacion puede crear geometria posterior dificil: embudos, curvaturas fuertes o correlaciones extremas. La cadena puede quedar atrapada o explorar solo una parte del espacio.
+
+En modelos jerarquicos, elegir entre parametrizacion centrada y no centrada puede cambiar radicalmente la eficiencia.
+
+## Conexion computacional
+
+En R se usan paquetes como `posterior`, `bayesplot` y `coda` para calcular `Rhat`, ESS, autocorrelaciones y trazas. En Stan, los diagnosticos deben revisarse antes de interpretar coeficientes o predicciones.
+
+## Lecturas sugeridas
+
+- Hoff: secciones sobre evaluacion de simulaciones MCMC.
+- Carlin y Louis: capitulos sobre diagnostico de convergencia y problemas de mezcla.
+- Bolstad: capitulos sobre diagnosticos computacionales para MCMC.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-07-diagnostico-mcmc.Rmd)

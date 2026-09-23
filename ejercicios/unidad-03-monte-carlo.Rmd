@@ -1,0 +1,40 @@
+---
+title: "Unidad 03: Monte Carlo"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(103)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes.
+```
+
+## Ejercicio 1: Simulacion
+
+Estime una probabilidad o esperanza mediante simulacion independiente. Guarde al menos 100 simulaciones en `estimaciones_mc` y explique el estimando.
+
+```{r}
+# TODO: genere estimaciones_mc.
+```
+
+## Ejercicio 2: Estimador y precision
+
+Calcule `estimacion_mc` y un `error_estandar` no negativo. Interprete ambos y relacione la precision con el tamano de muestra.
+
+```{r}
+# TODO: calcule los objetos requeridos.
+```
+
+## Ejercicio 3: Repeticion
+
+Repita el experimento con otro tamano de muestra. Explique la ley de los grandes numeros y por que una sola simulacion no prueba exactitud.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

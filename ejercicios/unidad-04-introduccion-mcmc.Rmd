@@ -1,0 +1,40 @@
+---
+title: "Unidad 04: Introduccion a MCMC"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(104)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes.
+```
+
+## Ejercicio 1: Cadena simple
+
+Implemente una cadena de Markov simple con distribucion estacionaria conocida. Guarde al menos 200 estados en `cadena_mcmc` y describa estado, transicion y estacionariedad.
+
+```{r}
+# TODO: genere cadena_mcmc.
+```
+
+## Ejercicio 2: Resumen
+
+Calcule `media_cadena`. Describa por que los estados no son independientes y que efecto tiene el periodo inicial.
+
+```{r}
+# TODO: calcule media_cadena.
+```
+
+## Ejercicio 3: Dependencia
+
+Calcule `autocorrelacion_lag1` y explique como la dependencia afecta el tamano efectivo de muestra. Incluya un grafico de traza opcional.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

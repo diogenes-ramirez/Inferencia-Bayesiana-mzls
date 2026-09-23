@@ -1,0 +1,40 @@
+---
+title: "Unidad 02: Aproximaciones numericas"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(102)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; no se requieren paquetes.
+```
+
+## Ejercicio 1: Grilla posterior
+
+Construya una grilla para una posterior beta-binomial no normalizada y guarde sus pesos normalizados en `grilla_posterior` (al menos 20 puntos). Explique por que la normalizacion es necesaria.
+
+```{r}
+# TODO: construya grilla_posterior.
+```
+
+## Ejercicio 2: Integracion
+
+Aproxime la integral de la densidad en la grilla y guarde el resultado positivo en `integral_aproximada`. Describa el efecto de refinar la grilla.
+
+```{r}
+# TODO: calcule integral_aproximada.
+```
+
+## Ejercicio 3: Cuantiles
+
+Obtenga `cuantiles_posteriores` con dos limites ordenados. Compare la aproximacion por grilla con el calculo analitico disponible y discuta el error numerico.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

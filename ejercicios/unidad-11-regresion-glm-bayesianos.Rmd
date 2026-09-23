@@ -1,0 +1,36 @@
+---
+title: "Unidad 11: Regresion y GLM bayesianos"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(111)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; puede usar cmdstanr de forma opcional, sin requerirlo para calificacion.
+```
+
+## Ejercicio 1: Especificacion
+
+Plantee una regresion lineal o logistica bayesiana con datos simulados. Justifique priors para intercepto y coeficientes.
+
+## Ejercicio 2: Ajuste
+
+Guarde la representacion del modelo en `ajuste_regresion` y al menos dos resumenes de coeficientes en `coeficientes_posteriores`.
+
+```{r}
+# TODO: cree ajuste_regresion y coeficientes_posteriores.
+```
+
+## Ejercicio 3: Prediccion
+
+Genere al menos 10 valores en `predicciones_posteriores`. Interprete una prediccion posterior y diferenciela de una estimacion puntual del coeficiente.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

@@ -1,0 +1,57 @@
+---
+title: "Unidad 1. Fundamentos Computacionales"
+---
+
+## Proposito
+
+Esta unidad establece el lenguaje comun del curso: la inferencia bayesiana como actualizacion de incertidumbre y la computacion como herramienta para estudiar distribuciones posteriores cuando el calculo cerrado no alcanza.
+
+## Conceptos clave
+
+### Regla de Bayes y distribucion posterior
+
+La regla de Bayes conecta datos, modelo e incertidumbre. Si $\theta$ representa parametros desconocidos y $y$ los datos observados, la distribucion posterior es
+$$p(\theta \mid y)=\frac{p(y\mid \theta)p(\theta)}{p(y)}.$$
+El denominador $p(y)=\int p(y\mid\theta)p(\theta)d\theta$ normaliza la distribucion y suele ser la parte dificil del problema.
+
+Conceptualmente, la posterior resume lo que se sabe de $\theta$ despues de observar los datos. No es solo un estimador puntual: permite calcular intervalos creibles, probabilidades posteriores y predicciones.
+
+### Priors, verosimilitud y posterior
+
+El prior $p(\theta)$ expresa informacion previa o regularizacion antes de ver los datos. La verosimilitud $p(y\mid\theta)$ describe que tan compatibles son los datos con distintos valores de $\theta$. La posterior combina ambos componentes.
+
+Un prior no es un adorno: en muestras pequenas puede influir mucho, y en modelos complejos puede estabilizar la inferencia. Por eso conviene justificarlo, revisarlo y estudiar sensibilidad.
+
+### Casos conjugados como referencia
+
+En modelos conjugados, prior y posterior pertenecen a la misma familia. Por ejemplo, con $y\mid\theta\sim\text{Binomial}(n,\theta)$ y $\theta\sim\text{Beta}(a,b)$, la posterior es $\theta\mid y\sim\text{Beta}(a+y,b+n-y)$.
+
+Estos casos sirven como laboratorio conceptual: muestran como los datos actualizan parametros del prior y permiten verificar algoritmos computacionales contra respuestas conocidas.
+
+### Posteriores sin solucion analitica
+
+Muchos modelos reales no tienen una posterior con forma reconocible. Puede haber parametros multiples, estructuras jerarquicas, restricciones, variables latentes o verosimilitudes no conjugadas.
+
+En esos casos, la inferencia se traslada a aproximaciones numericas o simulacion. El objetivo deja de ser escribir una formula cerrada y pasa a ser calcular cantidades posteriores con error controlado.
+
+### Simulacion y visualizacion en R
+
+La simulacion permite representar distribuciones mediante muestras. Con una muestra posterior $\theta^{(1)},\ldots,\theta^{(S)}$, se aproximan medias, cuantiles y probabilidades con operaciones simples.
+
+La visualizacion en R ayuda a detectar forma, asimetria, colas y dependencia entre parametros. Un grafico posterior no reemplaza la teoria, pero hace visible la incertidumbre que el modelo produce.
+
+## Conexion computacional
+
+En R se comienza con modelos simples: evaluar priors, verosimilitudes y posteriores en una grilla; simular de distribuciones conocidas; y comparar resultados con formulas conjugadas. Estas practicas preparan el camino para MCMC y Stan, donde la posterior se estudia mediante muestras en lugar de expresiones cerradas.
+
+## Lecturas sugeridas
+
+- Hoff: capitulos iniciales sobre regla de Bayes, modelos binomiales, Poisson y normales conjugados.
+- Carlin y Louis: capitulos introductorios sobre componentes del modelo bayesiano y especificacion de priors.
+- Bolstad: capitulos sobre fundamentos computacionales, simulacion y aproximacion de distribuciones posteriores.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-01-fundamentos-computacionales.Rmd)

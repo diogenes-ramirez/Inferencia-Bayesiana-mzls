@@ -1,0 +1,13 @@
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Quarto generated files
+.quarto/
+_site/
+_freeze/
+
+# Local student submissions and generated grading reports
+entregas/
+calificacion/reportes/

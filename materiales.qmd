@@ -1,0 +1,36 @@
+---
+title: "Materiales"
+---
+
+## Lecturas Base
+
+- Gelman et al., *Bayesian Data Analysis*.
+- McElreath, *Statistical Rethinking*.
+- Kruschke, *Doing Bayesian Data Analysis*.
+- Stan Development Team, *Stan User's Guide*.
+
+## Recursos Web
+
+- Stan: <https://mc-stan.org/>
+- CmdStanR: <https://mc-stan.org/cmdstanr/>
+- Quarto: <https://quarto.org/>
+- R for Data Science: <https://r4ds.hadley.nz/>
+
+## Paquetes Relevantes
+
+- `cmdstanr`: interfaz R para CmdStan.
+- `posterior`: manejo de muestras posteriores.
+- `bayesplot`: diagnosticos y graficos bayesianos.
+- `loo`: validacion cruzada aproximada y comparacion predictiva.
+- `coda`: diagnosticos clasicos de MCMC.
+- `brms`: modelado bayesiano de alto nivel basado en Stan.
+
+## Datos
+
+Durante el curso se recomienda trabajar con conjuntos de datos pequeños al inicio y aumentar la complejidad progresivamente:
+
+- Ensayos binomiales.
+- Conteos Poisson.
+- Mediciones normales.
+- Datos agrupados por escuelas, hospitales o regiones.
+- Datos de regresion con predictores continuos y categoricos.

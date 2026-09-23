@@ -1,0 +1,49 @@
+---
+title: "Unidad 11. Regresion y GLM Bayesianos"
+---
+
+## Proposito
+
+Esta unidad conecta la inferencia bayesiana con modelos aplicados de prediccion y explicacion. La regresion bayesiana permite modelar efectos, incertidumbre y predicciones dentro de una misma estructura probabilistica.
+
+## Conceptos clave
+
+### Regresion lineal bayesiana
+
+En regresion lineal, se modela $y_i\sim N(x_i^T\beta,\sigma)$ con priors para $\beta$ y $\sigma$. La posterior combina ajuste a los datos con regularizacion previa.
+
+La interpretacion bayesiana no se limita al mejor valor de $\beta$: se estudia una distribucion de efectos plausibles y de predicciones plausibles.
+
+### Modelos lineales generalizados bayesianos
+
+Los GLM bayesianos extienden la regresion a respuestas binarias, conteos y otros tipos de datos. Usan una funcion de enlace para conectar predictores lineales con parametros de la distribucion observacional.
+
+Por ejemplo, en regresion logistica $y_i\sim\text{Bernoulli}(p_i)$ y $\text{logit}(p_i)=x_i^T\beta$. En Poisson, $y_i\sim\text{Poisson}(\lambda_i)$ y $\log(\lambda_i)=x_i^T\beta$.
+
+### Construccion de verosimilitudes con predictores
+
+La verosimilitud debe reflejar el proceso de datos. No se elige normalidad por costumbre: se elige segun soporte, variabilidad, dependencia y mecanismo generativo.
+
+Los predictores entran como estructura sistematica. Priors razonables sobre coeficientes evitan estimaciones extremas, especialmente con separacion en modelos logisticos o conteos escasos.
+
+### Interpretacion de coeficientes, predicciones e incertidumbre
+
+Un coeficiente posterior resume cambios esperados en la escala del enlace. A veces conviene transformar resultados a probabilidades, medias esperadas o diferencias predictivas para comunicarlos mejor.
+
+La incertidumbre se comunica con intervalos creibles, distribuciones predictivas y probabilidades de eventos relevantes. La pregunta aplicada guia el resumen.
+
+## Conexion computacional
+
+En Stan se escriben GLM declarando la distribucion de respuesta, el predictor lineal y los priors. En R se preparan matrices de diseno, se extraen draws y se calculan predicciones para casos nuevos o escenarios contrafactuales.
+
+## Lecturas sugeridas
+
+- Hoff: capitulos sobre modelos normales, regresion y modelos lineales bayesianos.
+- Carlin y Louis: secciones sobre regresion bayesiana, GLM y analisis aplicado.
+- Bolstad: capitulos sobre computacion posterior en modelos de regresion.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-11-regresion-glm-bayesianos.Rmd)

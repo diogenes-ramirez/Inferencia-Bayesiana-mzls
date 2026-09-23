@@ -1,0 +1,40 @@
+---
+title: "Unidad 01: Fundamentos computacionales"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(101)
+estudiante_id <- "REEMPLAZAR"
+# Use R base. Instale paquetes solo si agrega visualizaciones opcionales.
+```
+
+## Ejercicio 1: Actualizacion beta-binomial
+
+Considere 12 exitos en 20 ensayos y un prior Beta(2, 2). Explique que representa cada componente de la regla de Bayes. Genere al menos 5000 muestras de la posterior en `posterior_muestras`.
+
+```{r}
+# TODO: cree posterior_muestras con rbeta().
+```
+
+## Ejercicio 2: Resumen posterior
+
+Calcule `media_posterior` y `intervalo_credible` (dos cuantiles ordenados). Interprete ambos resultados en el contexto del parametro de exito.
+
+```{r}
+# TODO: calcule los objetos requeridos.
+```
+
+## Ejercicio 3: Sensibilidad
+
+Compare brevemente el resultado con otro prior razonable. Explique cuando el prior puede tener mayor influencia que los datos y muestre un grafico opcional.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

@@ -1,0 +1,49 @@
+---
+title: "Unidad 9. Hamiltonian Monte Carlo"
+---
+
+## Proposito
+
+Esta unidad explica la idea detras de HMC: usar geometria y gradientes para proponer movimientos largos e informados en la posterior. Es la base del muestreo moderno en Stan.
+
+## Conceptos clave
+
+### Motivacion geometrica
+
+Metropolis aleatorio puede caminar lentamente en alta dimension. HMC mejora esto usando informacion de la pendiente de la log posterior para moverse por regiones de alta probabilidad.
+
+La idea es imaginar una particula que se desplaza sobre una superficie definida por la posterior. En lugar de saltar a ciegas, sigue trayectorias guiadas por la geometria.
+
+### Energia potencial y cinetica
+
+HMC define energia potencial como $U(\theta)=-\log p(\theta\mid y)$, ignorando constantes. Tambien introduce momento auxiliar $r$ con energia cinetica $K(r)$.
+
+La energia total $H(\theta,r)=U(\theta)+K(r)$ define una dinamica que, si se simulara exactamente, preservaria la distribucion objetivo.
+
+### Integrador leapfrog
+
+Como la dinamica exacta rara vez se puede resolver, HMC usa el integrador leapfrog. Este alterna actualizaciones pequenas de momento y posicion para aproximar la trayectoria.
+
+Leapfrog es reversible y conserva volumen, propiedades necesarias para corregir el error numerico con un paso Metropolis final.
+
+### Tamano de paso y longitud de trayectoria
+
+El tamano de paso controla precision del integrador. Pasos demasiado grandes generan error y rechazos; pasos demasiado pequenos son costosos.
+
+La longitud de trayectoria determina cuanto se aleja la propuesta del punto inicial. Trayectorias cortas se parecen a caminatas lentas; trayectorias excesivas pueden desperdiciar calculo o volver cerca del inicio.
+
+## Conexion computacional
+
+Stan calcula gradientes con diferenciacion automatica y usa HMC como motor de exploracion. El usuario no programa leapfrog, pero debe interpretar advertencias, divergencias y parametros de adaptacion porque reflejan problemas geometricos del modelo.
+
+## Lecturas sugeridas
+
+- Hoff: fundamentos de posteriores multivariadas y simulacion que preparan HMC.
+- Carlin y Louis: contexto de metodos MCMC avanzados para modelos complejos.
+- Bolstad: motivacion computacional de MCMC y limitaciones de caminatas aleatorias.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-09-hmc.Rmd)

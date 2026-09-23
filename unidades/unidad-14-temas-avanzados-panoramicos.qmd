@@ -1,0 +1,49 @@
+---
+title: "Unidad 14. Temas Avanzados Panoramicos"
+---
+
+## Proposito
+
+Esta unidad ofrece un panorama final de metodos que amplian la inferencia bayesiana computacional cuando MCMC estandar no es suficiente, no es conveniente o no responde al tipo de problema.
+
+## Conceptos clave
+
+### Inferencia variacional
+
+La inferencia variacional aproxima la posterior con una familia mas simple $q(\theta)$ y busca el miembro mas cercano a $p(\theta\mid y)$, usualmente maximizando una cota inferior de evidencia.
+
+Su ventaja es velocidad y escalabilidad. Su riesgo es subestimar incertidumbre si la familia aproximante es demasiado restrictiva.
+
+### Approximate Bayesian Computation
+
+ABC se usa cuando se puede simular del modelo pero la verosimilitud es dificil o imposible de evaluar. Compara estadisticos resumidos simulados con observados y acepta parametros que generan datos parecidos.
+
+La calidad depende de los resumenes elegidos, la tolerancia y la capacidad del simulador para representar el proceso real.
+
+### Muestreo secuencial Monte Carlo
+
+SMC representa distribuciones con particulas ponderadas que evolucionan a traves de etapas. Puede usarse en modelos dinamicos o para pasar gradualmente del prior a la posterior.
+
+Combina reponderacion, remuestreo y movimiento de particulas para evitar que todo el peso quede concentrado en pocas muestras.
+
+### Modelos de mezcla y label switching
+
+Los modelos de mezcla representan poblaciones heterogeneas como combinaciones de componentes latentes. Son flexibles, pero presentan identificabilidad parcial: intercambiar etiquetas de componentes puede producir la misma verosimilitud.
+
+El label switching complica resumenes de parametros por componente. Muchas veces conviene resumir cantidades predictivas o imponer restricciones interpretables.
+
+## Conexion computacional
+
+Estos metodos aparecen cuando el tamano del problema, la estructura temporal, la verosimilitud intratable o la multimodalidad vuelven insuficiente el flujo basico de MCMC. En R y Stan algunos pueden implementarse directamente, pero otros requieren paquetes especializados o decisiones de modelado mas cuidadosas.
+
+## Lecturas sugeridas
+
+- Hoff: temas de modelos latentes, mezcla y extensiones de modelos bayesianos.
+- Carlin y Louis: capitulos avanzados sobre modelos complejos y computacion bayesiana.
+- Bolstad: secciones sobre metodos computacionales alternativos y aproximaciones.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-14-temas-avanzados-panoramicos.Rmd)

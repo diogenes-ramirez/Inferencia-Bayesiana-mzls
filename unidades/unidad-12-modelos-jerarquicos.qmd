@@ -1,0 +1,43 @@
+---
+title: "Unidad 12. Modelos Jerarquicos"
+---
+
+## Proposito
+
+Esta unidad estudia modelos con parametros relacionados entre grupos. Los modelos jerarquicos permiten compartir informacion, representar heterogeneidad y evitar estimaciones inestables en grupos pequenos.
+
+## Conceptos clave
+
+### Pooling completo, sin pooling y pooling parcial
+
+El pooling completo asume que todos los grupos comparten el mismo parametro. Sin pooling estima cada grupo de manera separada. El pooling parcial permite que cada grupo tenga su parametro, pero los conecta mediante una distribucion poblacional.
+
+En un modelo simple, $\theta_j\sim N(\mu,\tau)$ y los datos del grupo $j$ informan a $\theta_j$. Los grupos con pocos datos se contraen mas hacia $\mu$; los grupos con muchos datos tienen mas autonomia.
+
+### Parametrizacion centrada y no centrada
+
+La parametrizacion centrada escribe directamente $\theta_j\sim N(\mu,\tau)$. La no centrada escribe $\theta_j=\mu+\tau z_j$, con $z_j\sim N(0,1)$.
+
+Ambas representan el mismo modelo, pero pueden tener geometria posterior muy distinta. Cuando los datos por grupo son debiles, la no centrada suele mejorar la exploracion MCMC.
+
+### Priors para escalas y correlaciones
+
+Las escalas jerarquicas como $\tau$ controlan cuanta variacion entre grupos se permite. Priors demasiado amplios pueden crear colas dificiles; priors demasiado estrechos pueden ocultar heterogeneidad real.
+
+Para efectos multivariados, las correlaciones requieren priors adecuados. En Stan se suele separar escalas y matriz de correlacion para mejorar interpretacion y computacion.
+
+## Conexion computacional
+
+En R se visualiza pooling comparando estimaciones crudas, medias parciales y predicciones por grupo. En Stan se implementan efectos de grupo, parametrizaciones centradas o no centradas y priors de escala. Los diagnosticos son esenciales porque estos modelos pueden producir divergencias y baja ESS.
+
+## Lecturas sugeridas
+
+- Hoff: capitulos sobre modelos jerarquicos normales y pooling parcial.
+- Carlin y Louis: capitulos centrales sobre modelos jerarquicos bayesianos.
+- Bolstad: secciones sobre MCMC aplicado a modelos con multiples niveles.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-12-modelos-jerarquicos.Rmd)

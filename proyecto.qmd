@@ -1,0 +1,39 @@
+---
+title: "Proyecto Final"
+---
+
+## Objetivo
+
+El proyecto final consiste en formular, estimar, diagnosticar e interpretar un modelo bayesiano aplicado usando R y Stan.
+
+## Entregables
+
+- Pregunta de investigacion.
+- Descripcion de los datos.
+- Modelo generativo.
+- Justificacion de priors.
+- Implementacion en Stan.
+- Diagnosticos MCMC.
+- Chequeos predictivos.
+- Interpretacion de resultados.
+- Informe reproducible en Quarto.
+
+## Rubrica Sugerida
+
+| Criterio | Peso |
+|---|---:|
+| Formulacion del problema | 15% |
+| Especificacion del modelo bayesiano | 20% |
+| Implementacion en R y Stan | 20% |
+| Diagnostico computacional | 20% |
+| Interpretacion y comunicacion | 15% |
+| Reproducibilidad del informe | 10% |
+
+## Ideas de Proyecto
+
+- Modelo jerarquico para resultados educativos.
+- Regresion logistica bayesiana para clasificacion.
+- Modelo Poisson o binomial negativo para conteos.
+- Modelo de supervivencia simple.
+- Comparacion de tratamientos con incertidumbre posterior.
+- Modelo de series temporales bayesiano sencillo.

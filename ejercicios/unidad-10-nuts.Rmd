@@ -1,0 +1,36 @@
+---
+title: "Unidad 10: NUTS"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(110)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; puede analizar draws y diagnosticos simulados si no usa Stan.
+```
+
+## Ejercicio 1: Adaptacion NUTS
+
+Explique como NUTS evita elegir manualmente una longitud de trayectoria fija y que adapta durante el calentamiento.
+
+## Ejercicio 2: Resultados
+
+Genere o analice al menos 100 draws en `muestras_nuts`. Guarde la profundidad de arbol usada en `profundidad_arbol`.
+
+```{r}
+# TODO: cree muestras_nuts y profundidad_arbol.
+```
+
+## Ejercicio 3: Alertas
+
+Guarde el numero entero no negativo de `divergencias`. Interprete que indica una divergencia y proponga una respuesta de modelado o parametrizacion.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

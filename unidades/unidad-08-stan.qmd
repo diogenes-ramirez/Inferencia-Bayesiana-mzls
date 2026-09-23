@@ -1,0 +1,55 @@
+---
+title: "Unidad 8. Stan"
+---
+
+## Proposito
+
+Esta unidad introduce Stan como lenguaje para declarar modelos bayesianos y obtener muestras posteriores con algoritmos modernos. El foco es escribir modelos claros, revisar diagnosticos y extraer inferencia reproducible desde R.
+
+## Conceptos clave
+
+### Estructura de un modelo Stan
+
+Un archivo Stan describe datos, parametros y relaciones probabilisticas. El modelo se declara mediante densidades, no mediante instrucciones manuales de muestreo.
+
+Esta separacion obliga a pensar generativamente: que datos se observaron, que cantidades son desconocidas y que supuestos conectan unas con otras.
+
+### Bloques `data`, `parameters`, `model` y `generated quantities`
+
+El bloque `data` declara informacion observada. `parameters` declara cantidades desconocidas que Stan debe inferir. `model` acumula log densidades de priors y verosimilitud. `generated quantities` calcula predicciones o transformaciones despues del muestreo.
+
+La organizacion por bloques hace explicita la frontera entre datos, parametros, modelo y resultados derivados.
+
+### Priors y verosimilitud
+
+En Stan, un prior como `beta ~ normal(0, 1)` suma una contribucion a la log posterior. La verosimilitud se escribe de manera similar, por ejemplo `y ~ normal(mu, sigma)`.
+
+La notacion parece simulacion, pero en el bloque `model` representa evaluacion de densidad. Esta distincion es importante para no confundir generacion de datos con condicionamiento en datos observados.
+
+### Ejecucion desde R con `cmdstanr`
+
+`cmdstanr` compila el modelo Stan, prepara datos como listas de R y ejecuta el muestreo. El resultado contiene draws, diagnosticos, tiempos y mensajes de advertencia.
+
+El flujo recomendado es iterativo: escribir un modelo minimo, compilar, probar con datos simulados, revisar diagnosticos y luego avanzar a datos reales.
+
+### Extraccion, resumen y visualizacion de distribuciones posteriores en R
+
+Las muestras posteriores pueden convertirse a formatos manejables con `posterior` y visualizarse con `bayesplot` o `ggplot2`. Se resumen medias, cuantiles, intervalos creibles y probabilidades de interes.
+
+El resumen no debe separarse de los diagnosticos: una tabla posterior con `Rhat` malo o ESS bajo no es evidencia confiable.
+
+## Conexion computacional
+
+Stan traduce el modelo a codigo eficiente y usa derivadas automaticas para explorar la posterior. R organiza datos, ejecucion, resumen y comunicacion. El curso usa esta division: Stan para inferencia, R para analisis y visualizacion.
+
+## Lecturas sugeridas
+
+- Hoff: modelos bayesianos como base conceptual para especificar priors y verosimilitudes.
+- Carlin y Louis: modelado jerarquico e inferencia computacional aplicada.
+- Bolstad: fundamentos computacionales que motivan el uso de software MCMC moderno.
+
+## Ejercicio de la unidad
+
+Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
+
+[Descargar ejercicio en R Markdown](../ejercicios/unidad-08-stan.Rmd)

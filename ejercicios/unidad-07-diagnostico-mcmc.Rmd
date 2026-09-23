@@ -1,0 +1,36 @@
+---
+title: "Unidad 07: Diagnostico MCMC"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(107)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; puede usar paquetes para diagnosticos, pero entregue objetos base R.
+```
+
+## Ejercicio 1: Cadenas
+
+Genere o cargue varias cadenas comparables. Explique que evidencia buscaria en trazas para evaluar convergencia.
+
+## Ejercicio 2: Diagnosticos
+
+Calcule `rhat_valor` y `ess_valor`. Guarde una tabla en `diagnosticos_mcmc` con al menos una fila. Interprete valores cercanos a uno para R-hat y el rol de ESS.
+
+```{r}
+# TODO: cree los objetos requeridos; puede usar calculos propios o un paquete.
+```
+
+## Ejercicio 3: Decision
+
+Describa una accion concreta si los diagnosticos son deficientes. Explique por que descartar iteraciones no resuelve toda falta de mezcla.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.

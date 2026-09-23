@@ -1,0 +1,24 @@
+---
+title: "Cronograma Sugerido"
+---
+
+| Semana | Tema | Practica |
+|---:|---|---|
+| 1 | Fundamentos bayesianos y R | Simulacion de priors y likelihood |
+| 2 | Aproximacion por grillas | Proporcion binomial |
+| 3 | Monte Carlo | Estimacion de esperanzas posteriores |
+| 4 | Muestreo por rechazo e importancia | Comparacion de aproximaciones |
+| 5 | Introduccion a MCMC | Cadenas de Markov simples |
+| 6 | Metropolis-Hastings | Implementacion desde cero |
+| 7 | Gibbs sampler | Modelo normal conjugado |
+| 8 | Diagnostico MCMC | Trazas, `Rhat`, ESS |
+| 9 | Introduccion a Stan | Modelos binomial y Poisson |
+| 10 | Regresion bayesiana en Stan | Regresion lineal y logistica |
+| 11 | Hamiltonian Monte Carlo | Geometria posterior |
+| 12 | NUTS y divergencias | Ajuste y diagnostico en Stan |
+| 13 | Modelos jerarquicos | Parametrizacion no centrada |
+| 14 | Comparacion predictiva | LOO y chequeos predictivos |
+| 15 | Taller de proyecto | Revision de avances |
+| 16 | Presentacion final | Entrega del proyecto |
+
+Este cronograma puede comprimirse o ampliarse segun la duracion real del curso.

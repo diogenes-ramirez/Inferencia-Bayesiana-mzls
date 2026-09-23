@@ -1,0 +1,36 @@
+---
+title: "Unidad 12: Modelos jerarquicos"
+author: ""
+date: ""
+output: html_document
+---
+
+## Instrucciones de entrega
+
+Entregue solamente este archivo `.Rmd`. El codigo debe ejecutarse desde una sesion limpia de R. No cambie los nombres de objetos requeridos.
+
+```{r setup}
+set.seed(112)
+estudiante_id <- "REEMPLAZAR"
+# Use R base; puede usar draws simulados o cmdstanr opcionalmente.
+```
+
+## Ejercicio 1: Pooling parcial
+
+Describa un problema con grupos y explique pooling completo, sin pooling y pooling parcial.
+
+## Ejercicio 2: Efectos de grupo
+
+Genere o analice efectos para al menos dos grupos en `efectos_grupo` y guarde una desviacion positiva entre grupos en `sigma_grupo`.
+
+```{r}
+# TODO: cree efectos_grupo y sigma_grupo.
+```
+
+## Ejercicio 3: Prediccion
+
+Guarde al menos 10 `predicciones_posteriores`. Explique como la jerarquia modifica la incertidumbre de grupos con pocos datos.
+
+## Declaracion
+
+Declaro que este trabajo es de mi autoria y que el documento puede reproducirse desde una sesion limpia de R.
