@@ -1,0 +1,14 @@
+---
+title: "Códigos MCMC"
+---
+
+Consulte los códigos de referencia MCMC en orden de complejidad creciente. Los primeros cinco usan R base; el último requiere `cmdstanr` y una instalación funcional de CmdStan.
+
+| Código | Archivo |
+|---|---|
+| Cadena de Markov | [Abrir o descargar `01-markov-chain.R`](../mcmc/01-markov-chain.R) |
+| Metropolis–Hastings | [Abrir o descargar `02-metropolis-hastings.R`](../mcmc/02-metropolis-hastings.R) |
+| Gibbs | [Abrir o descargar `03-gibbs.R`](../mcmc/03-gibbs.R) |
+| Diagnósticos | [Abrir o descargar `04-diagnostics.R`](../mcmc/04-diagnostics.R) |
+| Hamiltonian Monte Carlo (HMC) | [Abrir o descargar `05-hmc.R`](../mcmc/05-hmc.R) |
+| Stan y NUTS | [Abrir o descargar `06-stan-nuts.R`](../mcmc/06-stan-nuts.R) |

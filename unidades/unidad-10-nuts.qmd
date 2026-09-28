@@ -44,6 +44,8 @@ En `cmdstanr`, NUTS se controla con argumentos como `adapt_delta`, `max_treedept
 
 ## Ejercicio de la unidad
 
+Consulta el ejemplo [NUTS ejecutado mediante Stan](../mcmc/06-stan-nuts.R). NUTS lo implementa Stan; el script no reimplementa el algoritmo.
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-10-nuts.Rmd)

@@ -53,6 +53,8 @@ En R se simulan propuestas, se calculan log posteriores no normalizadas y se dec
 
 ## Ejercicio de la unidad
 
+Consulta la [implementación de referencia de Metropolis-Hastings](../mcmc/02-metropolis-hastings.R).
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-05-metropolis-hastings.Rmd)

@@ -44,6 +44,8 @@ Stan calcula gradientes con diferenciacion automatica y usa HMC como motor de ex
 
 ## Ejercicio de la unidad
 
+Consulta la [implementación didáctica de HMC](../mcmc/05-hmc.R), que implementa leapfrog y la corrección Metropolis.
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-09-hmc.Rmd)

@@ -44,6 +44,8 @@ En R, Gibbs se implementa como un bucle que alterna simulaciones condicionales y
 
 ## Ejercicio de la unidad
 
+Consulta la [implementación de referencia de Gibbs](../mcmc/03-gibbs.R).
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-06-gibbs.Rmd)

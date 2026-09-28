@@ -44,6 +44,8 @@ En R se pueden construir cadenas simples para observar dependencia, burn-in y me
 
 ## Ejercicio de la unidad
 
+Consulta también la [implementación de referencia de cadenas de Markov](../mcmc/01-markov-chain.R).
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-04-introduccion-mcmc.Rmd)

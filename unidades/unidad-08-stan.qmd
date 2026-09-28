@@ -50,6 +50,8 @@ Stan traduce el modelo a codigo eficiente y usa derivadas automaticas para explo
 
 ## Ejercicio de la unidad
 
+El ejemplo [Stan y NUTS con `cmdstanr`](../mcmc/06-stan-nuts.R) requiere CmdStan instalado.
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-08-stan.Rmd)

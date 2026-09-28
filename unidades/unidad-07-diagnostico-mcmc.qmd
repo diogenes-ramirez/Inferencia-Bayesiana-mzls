@@ -50,6 +50,8 @@ En R se usan paquetes como `posterior`, `bayesplot` y `coda` para calcular `Rhat
 
 ## Ejercicio de la unidad
 
+Consulta el ejemplo de [diagnósticos básicos en R](../mcmc/04-diagnostics.R).
+
 Descarga, completa y entrega la plantilla en R Markdown sin cambiar su nombre de archivo.
 
 [Descargar ejercicio en R Markdown](../ejercicios/unidad-07-diagnostico-mcmc.Rmd)

@@ -20,6 +20,8 @@ website:
         text: Instalacion
       - href: materiales.qmd
         text: Materiales
+      - href: unidades/codigos-mcmc.qmd
+        text: Códigos MCMC
       - href: proyecto.qmd
         text: Proyecto
       - href: entregas.qmd
