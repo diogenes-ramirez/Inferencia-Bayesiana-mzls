@@ -26,6 +26,25 @@ No siempre se puede simular directamente de todas las condicionales. En ese caso
 
 Este enfoque mixto permite combinar actualizaciones exactas donde existen con propuestas aproximadas donde la condicional es dificil.
 
+## Simulacion interactiva
+
+La siguiente simulación usa una normal bivariada estándar con correlación $\rho$. En cada iteración se actualiza primero $x\mid y$ y luego $y\mid x$; las distribuciones condicionales son normales con media $\rho y$ y $\rho x$, respectivamente, y varianza $1-\rho^2$. La traza muestra cómo estas actualizaciones locales recorren la distribución conjunta. Con correlaciones cercanas a $\pm1$, la cadena suele avanzar más lentamente a lo largo de la dirección de la nube.
+
+::: {.panel-tabset}
+## Simulador
+
+<div id="gibbs-sampler-root" aria-label="Simulador interactivo del muestreador de Gibbs"></div>
+
+<script type="importmap">
+{"imports":{"react":"https://esm.sh/react@19.1.0"}}
+</script>
+<script type="module" src="gibbs-sampler.js"></script>
+
+## ¿Qué observar?
+
+Cada paso realiza dos sorteos condicionales consecutivos. El gráfico conserva hasta 600 estados recientes y marca la posición actual. Cambiá $\rho$ para observar cómo la dependencia entre las variables afecta la forma de la nube y la persistencia de la trayectoria; el ejemplo ilustra el mecanismo del algoritmo, no reemplaza el diagnóstico de una aplicación real.
+:::
+
 ### Aplicaciones en modelos jerarquicos
 
 Los modelos jerarquicos suelen tener capas de parametros individuales, parametros poblacionales y escalas. Gibbs puede actualizar cada capa condicionando en las demas.
