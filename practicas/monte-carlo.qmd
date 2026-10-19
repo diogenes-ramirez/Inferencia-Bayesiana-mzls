@@ -52,7 +52,10 @@ intervalo_credibilidad
 
 ## Visualizacion
 
-```{r}
+La figura compara 10.000 simulaciones de la posterior con su densidad analitica. Cambia el numero de exitos para observar como se actualiza la distribucion.
+
+```r
+set.seed(123)
 hist(
   muestras,
   breaks = 40,
@@ -72,6 +75,15 @@ curve(
   lwd = 2
 )
 ```
+
+```{=html}
+<div id="beta-posterior-root"></div>
+<script type="importmap">
+{"imports":{"react":"https://esm.sh/react@19.1.0"}}
+</script>
+<script type="module" src="beta-posterior.js"></script>
+```
+
 
 ## Preguntas
 
