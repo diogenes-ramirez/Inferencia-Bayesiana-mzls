@@ -10,21 +10,21 @@ Usar simulacion Monte Carlo para aproximar cantidades posteriores en un modelo b
 
 Supongamos que observamos `y` exitos en `n` ensayos:
 
-\[
+$$
 y \mid \theta \sim \text{Binomial}(n, \theta)
-\]
+$$
 
 Usamos una distribucion previa:
 
-\[
+$$
 \theta \sim \text{Beta}(a, b)
-\]
+$$
 
 La posterior es:
 
-\[
+$$
 \theta \mid y \sim \text{Beta}(a + y, b + n - y)
-\]
+$$
 
 En esta practica usamos el caso conjugado para verificar nuestras simulaciones antes de estudiar modelos sin solucion analitica.
 
