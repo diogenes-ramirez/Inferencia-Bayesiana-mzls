@@ -40,6 +40,19 @@ La siguiente simulación usa una normal bivariada estándar con correlación $\r
 </script>
 <script type="module" src="gibbs-sampler.js"></script>
 
+## Video: un recorrido de Gibbs
+
+El video resume una actualización sistemática en la misma normal bivariada. Para cambiar la correlación, avanzar paso a paso o explorar más iteraciones, usá el simulador interactivo.
+
+```{=html}
+<video controls preload="metadata" playsinline aria-label="Animación del recorrido sistemático del muestreador de Gibbs">
+  <source src="../media/gibbs-sampler-manim.mp4" type="video/mp4">
+  Tu navegador no puede reproducir este video. <a href="../media/gibbs-sampler-manim.mp4">Descargar el video de Gibbs</a>.
+</video>
+
+<p><a href="../media/gibbs-sampler-manim.mp4" download>Descargar video (MP4)</a></p>
+```
+
 ## ¿Qué observar?
 
 Cada paso realiza dos sorteos condicionales consecutivos. El gráfico conserva hasta 600 estados recientes y marca la posición actual. Cambiá $\rho$ para observar cómo la dependencia entre las variables afecta la forma de la nube y la persistencia de la trayectoria; el ejemplo ilustra el mecanismo del algoritmo, no reemplaza el diagnóstico de una aplicación real.

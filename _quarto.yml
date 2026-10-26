@@ -5,6 +5,7 @@ project:
     - "unidades/*.qmd"
   resources:
     - "ejercicios/*.Rmd"
+    - "media/gibbs-sampler-manim.mp4"
 
 website:
   title: "Estadistica Bayesiana Computacional"
